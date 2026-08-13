@@ -65,6 +65,39 @@ flowchart LR
 | Anti-alucinação | Perfil como base de fatos com IDs + citação obrigatória + passo verificador | O modelo não pode afirmar nada sobre você que não aponte para um fato real do seu perfil |
 | Envio de respostas | Nunca automático | Controle do usuário e uso responsável: a ferramenta redige, você revisa e envia |
 
+## Como rodar
+
+Requisitos: Python 3.11+ e uma chave da Claude API.
+
+```bash
+# 1. Instalar (o extra "full" traz captura de tela, OCR e UI)
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -e ".[full]"
+
+# 2. Criar seu perfil (a base de fatos das respostas)
+cp profile.example.yaml profile.yaml   # edite com seus dados reais — está no .gitignore
+
+# 3. Configurar a chave da API (fica no keyring do SO, nunca em arquivo)
+copilot --set-api-key                  # ou exporte ANTHROPIC_API_KEY
+
+# 4a. Aplicação completa (tray + hotkey + overlay)
+copilot
+#     -> arme a captura no ícone da bandeja e use Ctrl+Shift+Space na tela do formulário
+
+# 4b. Modos de desenvolvimento (sem ambiente gráfico)
+copilot --ask "Por que você quer trabalhar conosco?"     # geração direta
+copilot --analyze-text vaga.txt                          # pipeline sobre texto
+copilot --analyze-image captura.png                      # pipeline com OCR local
+```
+
+Desenvolvimento:
+
+```bash
+pip install -e ".[dev]"
+pytest          # 42 testes (heurísticas, redação de PII, merger, verificador, storage, pipeline)
+ruff check src tests
+```
+
 ## Status
 
-📐 Fase de projeto — a implementação segue o plano em [`docs/06-mvp-roadmap.md`](docs/06-mvp-roadmap.md).
+✅ MVP implementado (captura → OCR → detecção → contexto → pesquisa → geração verificada → overlay → histórico). Próximos passos no roadmap: [`docs/06-mvp-roadmap.md`](docs/06-mvp-roadmap.md).

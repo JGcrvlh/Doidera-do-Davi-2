@@ -1,0 +1,18 @@
+# Dados pessoais — NUNCA commitar
+profile.yaml
+*.db
+*.db-wal
+*.db-shm
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

@@ -1,0 +1,35 @@
+QWidget#overlay {
+    background-color: rgba(24, 26, 32, 235);
+    border: 1px solid #3a3f4b;
+    border-radius: 10px;
+}
+QLabel { color: #e8eaf0; font-size: 13px; }
+QLabel#question { font-weight: bold; font-size: 14px; color: #ffffff; }
+QLabel#meta { color: #9aa0ae; font-size: 11px; }
+QLabel#warning { color: #ff6b6b; font-size: 12px; }
+QTextEdit {
+    background-color: #14161c;
+    color: #e8eaf0;
+    border: 1px solid #3a3f4b;
+    border-radius: 6px;
+    font-size: 13px;
+    padding: 6px;
+}
+QPushButton {
+    background-color: #2b6cb0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+}
+QPushButton:hover { background-color: #3182ce; }
+QPushButton#secondary { background-color: #3a3f4b; }
+QPushButton#secondary:hover { background-color: #4a5060; }
+QLineEdit {
+    background-color: #14161c;
+    color: #e8eaf0;
+    border: 1px solid #3a3f4b;
+    border-radius: 6px;
+    padding: 6px;
+}
