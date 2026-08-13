@@ -1,0 +1,57 @@
+# Copie este arquivo para profile.yaml (fora de repositorios publicos!) e preencha
+# com SEUS dados reais. Cada item tem um `id` estavel: as respostas geradas citam
+# esses ids em facts_used, e o verificador bloqueia qualquer afirmacao que nao
+# aponte para um fato daqui.
+
+identity:
+  name: "Seu Nome"
+  headline: "Desenvolvedor Backend Python"
+  location: "Sao Paulo, SP"
+
+experiences:
+  - id: exp-001
+    company: "Empresa X"
+    role: "Desenvolvedor Backend"
+    period: "2022-2024"
+    facts:
+      - "Mantive APIs REST em Python/FastAPI com ~200k requisicoes/dia"
+      - "Reduzi o tempo de resposta p95 de 800ms para 220ms otimizando queries e cache"
+      - "Trabalhei em squad agil com code review e CI/CD"
+    skills: [python, fastapi, postgres, redis, docker]
+
+  - id: exp-002
+    company: "Empresa Y"
+    role: "Estagiario de Desenvolvimento"
+    period: "2021-2022"
+    facts:
+      - "Automatizei rotinas de relatorios em Python, economizando ~10h/semana do time"
+    skills: [python, pandas, sql]
+
+projects:
+  - id: proj-001
+    name: "Candidate Copilot"
+    facts:
+      - "Projetei e construi um assistente desktop local-first com pipeline de IA (OCR, LLM, verificacao de fatos)"
+    skills: [python, asyncio, sqlite, llm]
+
+education:
+  - id: edu-001
+    institution: "Universidade Z"
+    degree: "Bacharelado em Ciencia da Computacao"
+    period: "2019-2023"
+
+# Nivel declarado por tecnologia. O gerador NUNCA pode elevar esses niveis.
+skills_matrix:
+  python: { level: "avancado", years: 4 }
+  fastapi: { level: "intermediario", years: 2 }
+  postgres: { level: "intermediario", years: 2 }
+  docker: { level: "intermediario", years: 2 }
+  java: { level: "iniciante", years: 0.5 }
+
+constraints:
+  - "Nunca afirmar experiencia profissional com tecnologias fora da skills_matrix"
+  - "Nunca inventar empresas, cargos, periodos ou resultados numericos"
+
+preferences:
+  tone: "profissional, direto, primeira pessoa"
+  language: "pt-BR"
